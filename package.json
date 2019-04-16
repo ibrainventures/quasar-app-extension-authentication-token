@@ -1,7 +1,7 @@
 {
-  "name": "quasar-app-extension-auth",
+  "name": "quasar-app-extension-authentication-token",
   "version": "0.0.1",
-  "description": "Authentication boiler plate",
+  "description": "Provides token based authentication for Quasar",
   "author": "Stefan van Herwijnen",
   "main": "src/index.js",
   "scripts": {
