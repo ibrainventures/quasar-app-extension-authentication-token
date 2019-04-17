@@ -25,6 +25,7 @@
       bordered
       content-class="bg-grey-2"
     >
+      <auth-menu></auth-menu>
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
         <q-item clickable tag="a" target="_blank" href="http://v1.quasar-framework.org">
@@ -83,9 +84,13 @@
 
 <script>
 import { openURL } from 'quasar'
+import authMenu from './auth/AuthMenu.vue'
 
 export default {
   name: 'MyLayout',
+  components: {
+    authMenu
+  },
   data () {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop

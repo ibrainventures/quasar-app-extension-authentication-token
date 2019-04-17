@@ -1,13 +1,16 @@
 <template>
   <q-page class="flex flex-center">
     <p>
-      Welcome {{ this.$auth.user().email }}
+      This page is only available when the user is logged in as administrator.
     </p>
   </q-page>
 </template>
 
+<style>
+</style>
+
 <script>
 export default {
-  name: 'Account'
+  name: 'AdminHome'
 }
 </script>

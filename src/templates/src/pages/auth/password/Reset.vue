@@ -6,7 +6,7 @@
     >
       <q-card-section>
         <div class="text-h6">
-          {{ $t('headers.password_forgot') }}
+          {{ $t('auth.password.reset.header') }}
         </div>
       </q-card-section>
 
@@ -39,7 +39,7 @@
           :loading="loading"
           @click="recoverPassword"
         >
-          {{ $t('buttons.submit') }}
+          {{ $t('auth.submit') }}
         </q-btn>
       </q-card-actions>
     </q-card>
@@ -52,7 +52,7 @@ import { required, sameAs, minLength } from 'vuelidate/lib/validators'
 var minPasswordLength = 8
 
 export default {
-  name: 'PasswordRecover',
+  name: 'PasswordReset',
   data () {
     return {
       form: {
@@ -75,15 +75,12 @@ export default {
         this.token = this.$route.query.token
         this.$auth.passwordRecover({ token: this.token, data: { 'password': this.form.password } }).then((response) => {
           this.$q.dialog({
-            message: this.$t('messages.password_recover_success')
+            message: this.$t('auth.password.resest.success')
           }).onOk(() => {
             this.$router.push('/login')
           })
         }).catch((error) => {
-          this.$q.dialog({
-            message: this.$t('errors.general_error')
-          })
-          console.log(error)
+          console.error(error)
         }).finally(() => {
           this.loading = false
         })
@@ -103,9 +100,3 @@ export default {
   }
 }
 </script>
-
-<style>
-[v-cloak] {
-  display: none;
-}
-</style>
